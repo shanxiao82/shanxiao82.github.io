@@ -41,8 +41,12 @@ for (var i = 0, l = window.dataLayer.length; i < l; i++) {
   var items = window.dataLayer[i];
   var keys = Object.keys(items);
   for (var j = 0, k = keys.length; j < k; j++) {
-    console.log('this is a key-> ' + keys[j] + ' & this is its value-> ' + items[keys[j]]);
-    myDiv.innerHTML += "<input type=\"hidden\" name=\""+keys[j]+"\" value=\""+items[keys[j]]+"\" />";
+    for (var paramKey of paramKeys){
+       if (keys[j]==paramKey){
+         console.log('this is a key-> ' + keys[j] + ' & this is its value-> ' + items[keys[j]]);
+         myDiv.innerHTML += "<input type=\"hidden\" name=\""+keys[j]+"\" value=\""+items[keys[j]]+"\" />";
+       }
+    }
   }
 }
 
