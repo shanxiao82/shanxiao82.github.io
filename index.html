@@ -12,7 +12,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script>
 window.dataLayer = window.dataLayer || []; 
 const params = new URLSearchParams(window.location.search);
-const paramKeys = params.keys();
+var paramKeys = params.keys();
 for (var key of paramKeys) {
 	window.dataLayer.push({ 
  	[key]: params.get(key) 
