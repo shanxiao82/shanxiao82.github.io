@@ -56,12 +56,15 @@ for (var i = 0, l = window.dataLayer.length; i < l; i++) {
 }
 </script>
 
-<iframe width=468 height=60></iframe>
-<script id="myScript"></script>
-<script>
- document.getElementById('myScript').setAttribute('src', srcIframe);
-</script>
+<iframe id="testIframe" width=468 height=60></iframe>
 
+<script>
+var myIframe = document.getElementById("testIframe");
+var myScript = myIframe.contentWindow.document.createElement("script");
+myScript.type = "text/javascript";
+myScript.src = srcIframe;
+myIframe.contentWindow.document.body.appendChild(myScript);
+</script>
 
 </body>
 </html>
