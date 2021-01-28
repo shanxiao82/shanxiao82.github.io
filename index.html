@@ -11,13 +11,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <script>
 window.dataLayer = window.dataLayer || []; 
-const params = new URLSearchParams(window.location.search);
-var paramKeys = params.keys();
-for (var key of paramKeys) {
+var params = new URLSearchParams(window.location.search);
+var paramKeys = Array.from(params.keys());
+
+for (var key of params.keys()) {
 	window.dataLayer.push({ 
  	[key]: params.get(key) 
   });
 }
+
+
+
 </script>
 </head>
 
@@ -41,9 +45,13 @@ for (var i = 0, l = window.dataLayer.length; i < l; i++) {
   var items = window.dataLayer[i];
   var keys = Object.keys(items);
   for (var j = 0, k = keys.length; j < k; j++) {
-         console.log('this is a key-> ' + keys[j] + ' & this is its value-> ' + items[keys[j]]);
-         myDiv.innerHTML += "<input type=\"hidden\" name=\""+keys[j]+"\" value=\""+items[keys[j]]+"\" />";   
-  }
+	 for (const paramKey of paramKeys){ 
+           if (paramKey==keys[j]){
+	     console.log('this is a key-> ' + keys[j] + ' & this is its value-> ' + items[keys[j]]);
+             myDiv.innerHTML += "<input type=\"hidden\" name=\""+keys[j]+"\" value=\""+items[keys[j]]+"\" />";   
+           }        
+         } 
+   }
 }
 
 
