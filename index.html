@@ -36,7 +36,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
 var myDiv = document.getElementById("sendParams");
 for (var i = 0, l = window.dataLayer.length; i < l; i++) {
-  var items = myarray[i];
+  var items = window.dataLayer[i];
   var keys = Object.keys(items);
   for (var j = 0, k = keys.length; j < k; j++) {
     console.log('this is a key-> ' + keys[j] + ' & this is its value-> ' + items[keys[j]]);
