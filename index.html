@@ -19,12 +19,31 @@ for (var key of params.keys()) {
 }
 </script>
 </head>
+
+
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W89PBMW"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<h1>Test Page</h1>
+
+<form action="http://httpbin.org/get" method="GET">
+<div id="sendParams">
+</div>
+<input type="submit" />
+</form>
+<script>
+var myDiv = document.getElementById("sendParams");
+for (var i = 0, l = window.dataLayer.length; i < l; i++) {
+  var items = myarray[i];
+  var keys = Object.keys(items);
+  for (var j = 0, k = keys.length; j < k; j++) {
+    console.log('this is a key-> ' + keys[j] + ' & this is its value-> ' + items[keys[j]]);
+    myDiv.innerHTML += "<input type=\"hidden\" name=\""+keys[j]+"\" value=\""+items[keys[j]]+"\" />";
+  }
+}
+</script>
+
 </body>
 </html>
