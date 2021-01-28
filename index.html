@@ -8,7 +8,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-W89PBMW');</script>
 <!-- End Google Tag Manager -->
-<script data-ad-client="ca-pub-4303526547240680" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <script>
 window.dataLayer = window.dataLayer || []; 
@@ -21,11 +20,13 @@ for (var key of params.keys()) {
   });
 }
 
-
+var userAgent = navigator.userAgent;
+var referrer = encodeURIComponent("https://shanxiao82.github.io/");
+var srcIframe = "http://c.fqtag.com/tag/implement-r.js?org=BB6DvPmytpFndg8atDcN&p="+referrer+"&a="+userAgent+"&cmp=sam&fmt=banner&rt=display&sl=1&fq=1";
 
 </script>
-</head>
 
+</head>
 
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -41,7 +42,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </form>
 <script>
 var myDiv = document.getElementById("sendParams");
-
 for (var i = 0, l = window.dataLayer.length; i < l; i++) {
   var items = window.dataLayer[i];
   var keys = Object.keys(items);
@@ -54,10 +54,14 @@ for (var i = 0, l = window.dataLayer.length; i < l; i++) {
          } 
    }
 }
-
-
-
 </script>
+
+<iframe width=468 height=60></iframe>
+<script id="myScript"></script>
+<script>
+ document.getElementById('myScript').setAttribute('src', srcIframe);
+</script>
+
 
 </body>
 </html>
