@@ -11,8 +11,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <script>
 window.dataLayer = window.dataLayer || []; 
-const params = new URLSearchParams(window.location.search)
-for (var key of params.keys()) {
+const params = new URLSearchParams(window.location.search);
+const paramKeys = params.keys();
+for (var key of paramKeys) {
 	window.dataLayer.push({ 
  	[key]: params.get(key) 
   });
@@ -35,14 +36,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </form>
 <script>
 var myDiv = document.getElementById("sendParams");
+
+for (var key of paramKeys) {
+    var item = window.dataLayer[key];
+    console.log('this is a key-> ' + key + ' & this is its value-> ' + item);
+    myDiv.innerHTML += "<input type=\"hidden\" name=\""+key+"\" value=\""+item+"\" />";
+  });
+}
+
+<!--
 for (var i = 0, l = window.dataLayer.length; i < l; i++) {
   var items = window.dataLayer[i];
-  var keys = Object.keys(items);
   for (var j = 0, k = keys.length; j < k; j++) {
     console.log('this is a key-> ' + keys[j] + ' & this is its value-> ' + items[keys[j]]);
     myDiv.innerHTML += "<input type=\"hidden\" name=\""+keys[j]+"\" value=\""+items[keys[j]]+"\" />";
   }
 }
+-->
+
 </script>
 
 </body>
