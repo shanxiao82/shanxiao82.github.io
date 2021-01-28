@@ -39,9 +39,10 @@ var myDiv = document.getElementById("sendParams");
 
 for (var i = 0, l = window.dataLayer.length; i < l; i++) {
   var items = window.dataLayer[i];
-  for (var j = 0, k = paramKeys.length; j < k; j++) {
-    console.log('this is a key-> ' + paramKeys[j] + ' & this is its value-> ' + items[paramKeys[j]]);
-    myDiv.innerHTML += "<input type=\"hidden\" name=\""+paramKeys[j]+"\" value=\""+items[paramKeys[j]]+"\" />";
+  var keys = Object.keys(items);
+  for (var j = 0, k = keys.length; j < k; j++) {
+    console.log('this is a key-> ' + keys[j] + ' & this is its value-> ' + items[keys[j]]);
+    myDiv.innerHTML += "<input type=\"hidden\" name=\""+keys[j]+"\" value=\""+items[keys[j]]+"\" />";
   }
 }
 
