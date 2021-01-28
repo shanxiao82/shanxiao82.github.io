@@ -42,6 +42,8 @@ for (var i = 0, l = window.dataLayer.length; i < l; i++) {
   var keys = Object.keys(items);
   for (var j = 0, k = keys.length; j < k; j++) {
     for (var paramKey of paramKeys){
+       console.log(paramKey);
+       console.log(keys[j]);
        if (keys[j].equals(paramKey)){
          console.log('this is a key-> ' + keys[j] + ' & this is its value-> ' + items[keys[j]]);
          myDiv.innerHTML += "<input type=\"hidden\" name=\""+keys[j]+"\" value=\""+items[keys[j]]+"\" />";
